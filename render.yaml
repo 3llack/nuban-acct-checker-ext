@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: account-checker-backend
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: "true"
+    startCommand: node server/server.js
+    healthCheckPath: /health
+    buildFilter:
+      paths:
+        - server/**
+        - render.yaml
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: TRUST_PROXY
+        value: "1"
+      - key: MONNIFY_API_KEY
+        sync: false
+      - key: MONNIFY_SECRET_KEY
+        sync: false
+      - key: MONNIFY_BASE_URL
+        value: https://api.monnify.com
+      - key: PAYSTACK_SECRET_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: chrome-extension://*

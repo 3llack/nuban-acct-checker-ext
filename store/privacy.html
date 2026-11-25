@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account Checker Privacy Policy</title>
+  <meta name="description" content="How the Account Checker Chrome extension by 266Labs handles your data.">
+  <style>
+    :root { --bg: #f6f3ec; --ink: #14261c; --muted: #5b6a61; --line: #ddd7ca; --accent: #1f6b45; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #111814; --ink: #e7efe9; --muted: #9aaaa0; --line: #2c3a31; --accent: #5cc58e; } }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 system-ui, sans-serif; }
+    main { max-width: 720px; margin: 0 auto; padding: 48px 16px 64px; }
+    h1 { font-size: 30px; line-height: 1.2; margin: 0 0 6px; }
+    h2 { font-size: 19px; margin: 32px 0 8px; }
+    p, li { color: var(--ink); }
+    .muted { color: var(--muted); margin: 0 0 24px; }
+    .summary { border: 1px solid var(--line); border-radius: 12px; padding: 4px 20px; }
+    a { color: var(--accent); }
+    ul { padding-left: 20px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Account Checker Privacy Policy</h1>
+  <p class="muted">Last updated 25 November 2026. Account Checker is a Chrome extension made by 266Labs.</p>
+
+  <div class="summary">
+    <p><strong>In short:</strong> we don't store your data. The extension reads your salary sheet in your browser. To check an account, only the account number and bank code are sent to our lookup service, which asks the bank lookup provider and sends back the account name. Names from your sheet never leave your browser. Nothing is saved, and closing the panel clears everything.</p>
+  </div>
+
+  <h2>What the extension reads</h2>
+  <ul>
+    <li><strong>Google Sheets.</strong> When you click "Check this sheet", the extension reads the sheet open in your current tab, using your own Google sign-in. It only reads; it never changes, writes to or saves your sheet.</li>
+    <li><strong>Excel and CSV files.</strong> A file you drop or choose is read inside your browser. It is not uploaded anywhere.</li>
+  </ul>
+
+  <h2>What leaves your browser</h2>
+  <p>For each row it checks, the extension sends two things to the 266Labs lookup service: the <strong>account number</strong> and the <strong>bank code</strong>. The service passes them to a bank account lookup provider, Monnify, or Paystack when Monnify cannot answer, and returns the name the bank holds for that account. The extension then compares that name with the name in your sheet, in your browser.</p>
+  <p>Names, amounts and every other column in your sheet are never sent.</p>
+
+  <h2>What we keep</h2>
+  <ul>
+    <li><strong>Nothing from your sheet.</strong> Account numbers, bank codes and the names returned are not saved or logged by the extension or by our service.</li>
+    <li><strong>Request records without personal data.</strong> Our service logs the time, the result code, how long the request took and which provider answered. These records contain no account numbers or names.</li>
+    <li><strong>Your IP address, briefly.</strong> To stop abuse, the service counts requests per IP address in memory for up to 24 hours. This count is not written to disk. Our hosting provider may keep standard network logs, including IP addresses, for its own security and operations.</li>
+  </ul>
+  <p>The extension itself stores nothing on your computer. Results live only in the open panel. "Download results" saves a file only to your own computer, and "Copy status column" only to your clipboard.</p>
+
+  <h2>Who else handles the data</h2>
+  <p>Account numbers and bank codes are processed by <a href="https://monnify.com/privacy" rel="noopener">Monnify</a> and, as a backup, <a href="https://paystack.com/privacy/merchant" rel="noopener">Paystack</a> to answer the lookup, under their own privacy policies. We do not sell or share data with anyone else, and we use no analytics, advertising or tracking.</p>
+
+  <h2>Tips</h2>
+  <p>The Tips link opens a Paystack payment page in a new tab. Anything you enter there goes to Paystack, under its own privacy policy. The extension never sees or handles payment details.</p>
+
+  <h2>Your choices</h2>
+  <p>You decide which sheet or file to check, and nothing is read until you click Check or drop a file. You can remove the extension at any time from chrome://extensions.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, we will update this page and the date at the top.</p>
+
+  <h2>Contact</h2>
+  <p>Questions: <a href="mailto:hello@266labs.com">hello@266labs.com</a>. More about us at <a href="https://266labs.com">266labs.com</a>.</p>
+</main>
+</body>
+</html>

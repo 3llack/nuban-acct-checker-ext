@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account Checker</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Account Checker</h1>
+      <p class="muted" id="sheet-title">Open a Google Sheet to start.</p>
+    </div>
+    <span class="badge" id="demo-badge" hidden title="Results are made up until the 266Labs lookup service is connected">Demo data</span>
+  </header>
+
+  <button id="check" class="primary">Check this sheet</button>
+  <p id="message" class="message" hidden></p>
+
+  <div id="drop" class="drop">
+    <span>Or drop an Excel or CSV file here</span>
+    <label class="file-btn">Choose a file<input type="file" id="file" class="visually-hidden"></label>
+  </div>
+
+  <section id="columns" hidden>
+    <label class="tab-pick" id="tab-pick-wrap" hidden>Tab <select id="tab-pick"></select></label>
+    <h2>Columns</h2>
+    <p class="muted small" id="pickers-hint" hidden>Each tab's columns were found on their own. Pick a single tab to change them.</p>
+    <div class="pickers" id="pickers">
+      <label>Name <select data-col="name"></select></label>
+      <label>Account no. <select data-col="account"></select></label>
+      <label>Bank <select data-col="bank"></select></label>
+    </div>
+  </section>
+
+  <section id="results" hidden>
+    <div class="progress" id="progress"><div id="progress-bar"></div></div>
+    <div class="chips" id="chips"></div>
+    <div class="actions">
+      <button id="copy">Copy status column</button>
+      <button id="download">Download results</button>
+    </div>
+    <p class="muted small" id="copy-hint" hidden></p>
+    <ol id="list"></ol>
+  </section>
+
+  <footer class="privacy small" id="privacy">
+    <p><strong>We don't store your data.</strong> No account numbers, names or anything else from your sheet are saved or logged, by this extension or by us. To check an account, only its number and bank are sent to the bank lookup; names never leave your browser. Closing this panel clears everything.</p>
+    <nav class="links">
+      <a id="site-link" target="_blank" rel="noopener">Built by 266Labs</a>
+      <a id="tips-link" target="_blank" rel="noopener" hidden>Tips</a>
+    </nav>
+  </footer>
+  <script type="module" src="panel.js"></script>
+</body>
+</html>

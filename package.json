@@ -1,0 +1,15 @@
+{
+  "name": "browser-acct-checker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "test:e2e": "node --test --test-concurrency=1 \"tests/e2e/*.e2e.js\"",
+    "server": "node --env-file-if-exists=server/.env server/server.js",
+    "pack": "node scripts/pack.mjs",
+    "screenshots": "node store/screenshots.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.65.1"
+  }
+}
