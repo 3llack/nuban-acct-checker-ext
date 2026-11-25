@@ -21,7 +21,7 @@ services:
       - key: MONNIFY_SECRET_KEY
         sync: false
       - key: MONNIFY_BASE_URL
-        value: https://api.monnify.com
+        value: https://sandbox.monnify.com
       - key: PAYSTACK_SECRET_KEY
         sync: false
       - key: ALLOWED_ORIGINS

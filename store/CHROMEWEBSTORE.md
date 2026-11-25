@@ -4,7 +4,7 @@ Everything to paste into the Chrome Web Store developer dashboard, in the order 
 
 ## Before you submit
 
-1. **Get a live Monnify key.** The Monnify sandbox does real lookups, but it is meant for testing and could be capped or switched off without warning. A live Paystack key is optional, since Paystack is only the backup.
+1. **Lookup keys.** Production runs on Monnify's sandbox keys, with the Paystack live key as the backup (owner's choice, 25 Nov 2026). If Monnify throttles or switches off the sandbox, Paystack answers.
 2. **Host the backend on Render.** `render.yaml` sets it up. Then set `BACKEND_URL` in `src/config.js` to the Render https address and commit it.
 3. **Build the zip.** Run `npm run pack` to get `dist/account-checker-<version>.zip`. The script refuses to build while the extension is in demo mode or points at localhost.
 4. **Push the 266labs site.** The privacy policy is built as a page there, at `https://266labs.com/account-checker/privacy` (committed in the 266labs repo, not pushed yet). If you change one copy, change the other: this repo has `store/privacy.html`.

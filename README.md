@@ -78,7 +78,7 @@ At least one provider's keys must be set. When the per-minute limit is hit, the 
 ## Deploy the backend (Render)
 
 1. Push this repo. In Render, choose New > Blueprint and pick the repo. `render.yaml` sets up the service: no build step, start command `node server/server.js`, health check `/health`.
-2. Enter `MONNIFY_API_KEY`, `MONNIFY_SECRET_KEY` and `PAYSTACK_SECRET_KEY` when Render asks. Keys only ever go into Render's dashboard.
+2. Enter `MONNIFY_API_KEY`, `MONNIFY_SECRET_KEY` and `PAYSTACK_SECRET_KEY` when Render asks. Keys only ever go into Render's dashboard. Production currently runs on Monnify's sandbox keys (`render.yaml` sets the sandbox URL), with Paystack's live key as the backup. Moving to live Monnify keys means also changing `MONNIFY_BASE_URL` to `https://api.monnify.com`.
 3. After it deploys, check that the log shows `monnify: login ok`.
 4. Put the service URL (for example `https://account-checker-backend.onrender.com`) in `BACKEND_URL` in `src/config.js`, then commit and push. Only changes to `server/` or `render.yaml` redeploy the backend.
 
